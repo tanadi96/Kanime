@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* In your CSS or Tailwind setup */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* This creates a responsive grid */
+  gap: 16px; /* Adjust the gap between cards */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 50%; /* Ensures all cards have the same height */
+}
+
+.spinner {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #ffc639;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite, glow 1.5s ease-in-out infinite;
+  position: relative;
+  box-shadow: 0 0 20px #ffc639; /* Outer glow effect */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.7), 0 0 30px rgba(52, 152, 219, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(52, 152, 219, 1), 0 0 60px rgba(52, 152, 219, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.7), 0 0 30px rgba(52, 152, 219, 0.4);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
